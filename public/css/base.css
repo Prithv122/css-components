@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  padding-block: var(--space-8);
+}
+
+.site-header {
+  margin-block-end: var(--space-8);
+}
+
+.site-header h1 {
+  font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  margin-block-end: var(--space-2);
+}
+
+.site-header p {
+  color: var(--color-text-muted);
+  max-width: 40rem;
+}
+
+.component-section {
+  margin-block-end: var(--space-8);
+  padding-block-end: var(--space-8);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.component-section:last-of-type {
+  border-block-end: none;
+}
+
+.component-section h2 {
+  font-size: 1.25rem;
+  margin-block-end: var(--space-1);
+}
+
+.component-section > p {
+  color: var(--color-text-muted);
+  margin-block-end: var(--space-4);
+  max-width: 40rem;
+}
+
+.example-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.example-row + .example-row {
+  margin-block-start: var(--space-3);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+/* One focus-visible rule every interactive component below relies on,
+   so keyboard-focus styling stays consistent instead of re-declared per component. */
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Hides an element visually while keeping it in the accessibility tree and the tab
+   order — used for the modal's real checkbox input (base.css since it's a generic utility,
+   not modal-specific). */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-footer {
+  margin-block-start: var(--space-8);
+  padding-block-start: var(--space-6);
+  border-block-start: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}

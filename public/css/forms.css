@@ -1,0 +1,88 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 24rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.field .hint {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field select,
+.field textarea {
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+/* :user-invalid only fires after the visitor has interacted with the field, so an empty
+   required input doesn't shout "invalid" before anyone has had a chance to fill it in. */
+.field input:user-invalid,
+.field textarea:user-invalid {
+  border-color: var(--color-invalid);
+}
+
+.field-error {
+  display: none;
+  color: var(--color-invalid);
+  font-size: 0.8rem;
+}
+
+.field:has(:user-invalid) .field-error {
+  display: block;
+}
+
+.field-check {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.field-check label {
+  font-weight: 400;
+}
+
+.field input[type="checkbox"],
+.field input[type="radio"] {
+  inline-size: 1.1rem;
+  block-size: 1.1rem;
+  accent-color: var(--color-primary);
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+legend {
+  font-weight: 600;
+  padding-inline: var(--space-2);
+}

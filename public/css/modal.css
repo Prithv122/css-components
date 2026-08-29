@@ -1,0 +1,83 @@
+/* Zero-JS modal: a checkbox drives visibility via `:checked ~` sibling selectors.
+   The checkbox itself stays in the DOM (visually hidden via .visually-hidden in base.css,
+   not display:none) so it stays a real, keyboard-focusable, Tab/Space-operable control —
+   every trigger and the close control are <label for> elements pointing at it. See
+   NOTES.md for the tradeoffs this pattern accepts (no Escape-to-close, no backdrop-click). */
+.modal-wrapper {
+  display: inline-block;
+}
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background: var(--color-backdrop);
+  z-index: 100;
+  opacity: 0;
+  transition: opacity var(--transition-fast), display var(--transition-fast) allow-discrete;
+}
+
+.modal {
+  background: var(--color-surface-raised);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: min(28rem, 100%);
+  padding: var(--space-6);
+  transform: translateY(-12px) scale(0.98);
+  transition: transform var(--transition-fast);
+}
+
+.modal-toggle:checked ~ .modal-backdrop {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-toggle:checked ~ .modal-backdrop .modal {
+  transform: translateY(0) scale(1);
+}
+
+/* Paired with the rule above: lets the entrance actually animate from these values
+   instead of the backdrop just appearing at opacity:1 the instant display flips. */
+@starting-style {
+  .modal-toggle:checked ~ .modal-backdrop {
+    opacity: 0;
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-block-end: var(--space-3);
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.modal-close {
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.modal-close:hover {
+  background: var(--color-secondary);
+}
+
+.modal-body {
+  color: var(--color-text-muted);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-block-start: var(--space-4);
+}

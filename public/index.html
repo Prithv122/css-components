@@ -9,18 +9,170 @@
       content="A CSS-only component library: buttons, cards, forms, and a modal, built with zero JavaScript."
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/buttons.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="stylesheet" href="css/modal.css" />
   </head>
   <body>
-    <header>
-      <h1>CSS Components</h1>
-      <p>A pure-CSS component library — buttons, cards, forms, and a modal. Zero JavaScript.</p>
-    </header>
-    <main>
-      <p>Component showcase coming soon.</p>
-    </main>
-    <footer>
-      <p><a href="https://github.com/Prithv122/css-components">Source on GitHub</a></p>
-    </footer>
+    <div class="page">
+      <header class="site-header">
+        <h1>CSS Components</h1>
+        <p>
+          Buttons, cards, forms, and a modal — every interaction on this page, including the
+          modal opening and closing, runs on CSS alone. No <code>&lt;script&gt;</code> tag
+          anywhere in this document.
+        </p>
+      </header>
+
+      <main>
+        <section class="component-section" aria-labelledby="buttons-heading">
+          <h2 id="buttons-heading">Buttons</h2>
+          <p>Four variants, two extra sizes, and disabled state — all built on one <code>.btn</code> base class.</p>
+          <div class="example-row">
+            <button class="btn btn-primary" type="button">Primary</button>
+            <button class="btn btn-secondary" type="button">Secondary</button>
+            <button class="btn btn-danger" type="button">Danger</button>
+            <button class="btn btn-outline" type="button">Outline</button>
+            <button class="btn btn-primary" type="button" disabled>Disabled</button>
+          </div>
+          <div class="example-row">
+            <button class="btn btn-primary btn-sm" type="button">Small</button>
+            <button class="btn btn-primary" type="button">Default</button>
+            <button class="btn btn-primary btn-lg" type="button">Large</button>
+          </div>
+        </section>
+
+        <section class="component-section" aria-labelledby="cards-heading">
+          <h2 id="cards-heading">Cards</h2>
+          <p>A media block, body content, and an actions row. Hover to see the elevation change.</p>
+          <div class="example-row">
+            <article class="card">
+              <div class="card-media"></div>
+              <div class="card-body">
+                <h3 class="card-title">Elevated card</h3>
+                <p class="card-text">Default shadow that deepens on hover, with a lift via <code>transform</code>.</p>
+                <div class="card-actions">
+                  <button class="btn btn-primary btn-sm" type="button">View</button>
+                  <button class="btn btn-outline btn-sm" type="button">Dismiss</button>
+                </div>
+              </div>
+            </article>
+            <article class="card card-flat">
+              <div class="card-media"></div>
+              <div class="card-body">
+                <h3 class="card-title">Flat card</h3>
+                <p class="card-text">Same markup, <code>.card-flat</code> drops the resting shadow for a quieter list.</p>
+                <div class="card-actions">
+                  <button class="btn btn-primary btn-sm" type="button">View</button>
+                  <button class="btn btn-outline btn-sm" type="button">Dismiss</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="component-section" aria-labelledby="forms-heading">
+          <h2 id="forms-heading">Forms</h2>
+          <p>
+            Text inputs, a select, a textarea, checkboxes/radios, and a live validation state —
+            try leaving the email field blank and clicking away, or typing something without an
+            <code>@</code>.
+          </p>
+          <form class="form" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Ada Lovelace" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="ada@example.com" />
+              <span class="hint">We'll only use this to reply.</span>
+              <span class="field-error">Enter a valid email address.</span>
+            </div>
+            <div class="field">
+              <label for="role">Role</label>
+              <select id="role" name="role">
+                <option value="ds">Data Scientist / ML</option>
+                <option value="ai">AI Engineer</option>
+                <option value="de">Data Engineer</option>
+                <option value="da">Data Analyst</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="What are you building?"></textarea>
+            </div>
+            <fieldset>
+              <legend>Notify me by</legend>
+              <div class="field field-check">
+                <input id="notify-email" name="notify-email" type="checkbox" checked />
+                <label for="notify-email">Email</label>
+              </div>
+              <div class="field field-check">
+                <input id="notify-sms" name="notify-sms" type="checkbox" />
+                <label for="notify-sms">SMS</label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Preferred contact time</legend>
+              <div class="field field-check">
+                <input id="time-morning" name="time" type="radio" checked />
+                <label for="time-morning">Morning</label>
+              </div>
+              <div class="field field-check">
+                <input id="time-evening" name="time" type="radio" />
+                <label for="time-evening">Evening</label>
+              </div>
+            </fieldset>
+            <div class="example-row">
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <button class="btn btn-outline" type="reset">Reset</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="component-section" aria-labelledby="modal-heading">
+          <h2 id="modal-heading">Modal</h2>
+          <p>
+            Opened and closed entirely with the checkbox hack — a hidden, still-focusable
+            checkbox toggled by <code>&lt;label for&gt;</code> controls, styled with
+            <code>:checked ~</code> and animated with <code>@starting-style</code>. See
+            <a href="https://github.com/Prithv122/css-components#4-key-decisions--tradeoffs">
+              the README</a> for what this pattern trades away.
+          </p>
+          <div class="modal-wrapper">
+            <input
+              type="checkbox"
+              id="demo-modal"
+              class="modal-toggle visually-hidden"
+              aria-label="Confirm action dialog"
+            />
+            <label for="demo-modal" class="btn btn-primary">Open modal</label>
+            <div class="modal-backdrop">
+              <div class="modal" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title">
+                <div class="modal-header">
+                  <h3 id="demo-modal-title">Confirm action</h3>
+                  <label for="demo-modal" class="modal-close" aria-label="Close">&times;</label>
+                </div>
+                <div class="modal-body">
+                  <p>This dialog, its backdrop, and its open/close transitions are pure CSS.</p>
+                </div>
+                <div class="modal-footer">
+                  <label for="demo-modal" class="btn btn-outline">Cancel</label>
+                  <label for="demo-modal" class="btn btn-primary">Confirm</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p><a href="https://github.com/Prithv122/css-components">Source on GitHub</a></p>
+      </footer>
+    </div>
   </body>
 </html>

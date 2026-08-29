@@ -1,0 +1,60 @@
+/* Design tokens — the single source of truth every component reads from.
+   Light values live on :root; dark overrides only the values that need to change. */
+:root {
+  color-scheme: light dark;
+
+  --color-bg: #f7f7fb;
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-border: #d8d8e2;
+  --color-text: #1b1b26;
+  --color-text-muted: #55556b;
+
+  --color-primary: #2354e6;
+  --color-primary-text: #ffffff;
+  --color-secondary: #e8e9f5;
+  --color-secondary-text: #1b1b26;
+  --color-danger: #c62828;
+  --color-danger-text: #ffffff;
+
+  --color-focus-ring: #2354e6;
+  --color-invalid: #c62828;
+  --color-backdrop: rgb(20 20 30 / 55%);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  --shadow-sm: 0 1px 2px rgb(20 20 30 / 8%);
+  --shadow-md: 0 4px 12px rgb(20 20 30 / 12%);
+  --shadow-lg: 0 16px 40px rgb(20 20 30 / 24%);
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --transition-fast: 120ms ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #14141c;
+    --color-surface: #1e1e29;
+    --color-surface-raised: #262633;
+    --color-border: #3a3a4d;
+    --color-text: #eeeef5;
+    --color-text-muted: #a4a4bd;
+
+    --color-secondary: #2c2c3c;
+    --color-secondary-text: #eeeef5;
+
+    --color-backdrop: rgb(0 0 0 / 65%);
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 40%);
+    --shadow-md: 0 4px 12px rgb(0 0 0 / 45%);
+    --shadow-lg: 0 16px 40px rgb(0 0 0 / 55%);
+  }
+}
