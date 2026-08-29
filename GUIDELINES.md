@@ -19,11 +19,11 @@ gates: `html-validate` and `@lhci/cli` (Lighthouse CI), both version-pinned in `
 
 ## Acceptance criteria
 
-- [ ] Buttons, cards, forms, and a modal — all built in pure CSS, zero `<script>`
-- [ ] Semantic HTML, proper landmarks/heading hierarchy
-- [ ] Dark mode via `prefers-color-scheme` + CSS custom properties
-- [ ] Lighthouse Performance/Accessibility/Best Practices/SEO all ≥ 95, CI-gated
-- [ ] Deployed and live on GitHub Pages
+- [x] Buttons, cards, forms, and a modal — all built in pure CSS, zero `<script>`
+- [x] Semantic HTML, proper landmarks/heading hierarchy
+- [x] Dark mode via `prefers-color-scheme` + CSS custom properties
+- [x] Lighthouse Performance/Accessibility/Best Practices/SEO all ≥ 95, CI-gated — currently 100/100/100/100
+- [ ] Deployed and live on GitHub Pages — Pages enabled, deploy pending next push
 - [ ] Ship gate passes (`/ship`)
 
 ## Project-specific notes

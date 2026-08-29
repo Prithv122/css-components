@@ -6,8 +6,13 @@ Form: **action → technical specifics → measured outcome.** Numbers or it doe
 
 ## Bullets
 
-- _..._
-- _..._
+- Built a zero-JavaScript CSS component library (buttons, cards, forms, modal) using only the
+  checkbox-hack pattern, `:has()`, `:user-invalid`, and `@starting-style` transitions; found and
+  fixed a real accessible-name collision on the modal's four label-driven controls via a
+  precedence-based `aria-label` fix.
+- Shipped with a CI-enforced Lighthouse gate (≥95 on all four categories, 3-run median) and
+  `html-validate`; measured result 100/100/100/100 (Performance/Accessibility/Best
+  Practices/SEO), deployed to GitHub Pages via GitHub Actions.
 
 ## Which roles this supports
 
@@ -18,7 +23,9 @@ Form: **action → technical specifics → measured outcome.** Numbers or it doe
 
 ## Keywords this project earns
 
-_..._
+CSS custom properties, `:has()`, `:user-invalid`, `@starting-style`, `transition-behavior:
+allow-discrete`, accessible-name computation / ARIA precedence, Lighthouse CI, `html-validate`,
+GitHub Actions, GitHub Pages.
 
 ---
 
