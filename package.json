@@ -1,0 +1,13 @@
+{
+  "name": "css-components",
+  "private": true,
+  "scripts": {
+    "validate": "html-validate \"public/*.html\"",
+    "lhci": "node scripts/run-lhci.js"
+  },
+  "devDependencies": {
+    "@lhci/cli": "0.15.1",
+    "html-validate": "11.10.0",
+    "puppeteer": "25.9.0"
+  }
+}
