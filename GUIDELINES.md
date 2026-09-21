@@ -24,7 +24,7 @@ gates: `html-validate` and `@lhci/cli` (Lighthouse CI), both version-pinned in `
 - [x] Dark mode via `prefers-color-scheme` + CSS custom properties
 - [x] Lighthouse Performance/Accessibility/Best Practices/SEO all ≥ 95, CI-gated — currently 100/100/100/100
 - [x] Deployed and live on GitHub Pages — https://prithv122.github.io/css-components/
-- [ ] Ship gate passes (`/ship`)
+- [ ] Ship gate passes
 
 ## Project-specific notes
 
